@@ -1,0 +1,19 @@
+﻿@page "/NumberLookup"
+
+<PageTitle>Number Lookup</PageTitle>
+
+<h1>Number Lookup</h1>
+
+<BSLabel>Phone number</BSLabel>
+<BSInput InputType="InputType.Text" Value="@Input"></BSInput>
+<BSButton Color="BSColor.Primary" OnClick="TriggerLookup">Lookup</BSButton>
+
+@code {
+
+    string? Input { get; set; }
+
+    static void TriggerLookup()
+    {
+    }
+
+}
