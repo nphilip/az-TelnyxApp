@@ -16,7 +16,7 @@ public static class TextMessaging
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
         HttpRequest req, ILogger log, [CosmosDB(
             "Telnyx",
-            "Messages",
+            "Message",
             ConnectionStringSetting = "CosmosDBConnectionString")]
         IAsyncCollector<string> receivedMessageOut)
     {
