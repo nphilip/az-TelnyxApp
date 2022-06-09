@@ -8,8 +8,7 @@ on:
     branches:
       - main
     paths:
-    - 'WebApp/**'
-# Environment variab
+    - 'azFunc/**'
   workflow_dispatch:
 
 env:
@@ -42,4 +41,4 @@ jobs:
           app-name: 'rro-fn-telnyxapp'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_73816620557043B7BB31D2BEC5004CF0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AFBABD5B078A4DF4A6A346D5ABA9B429 }}
