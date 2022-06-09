@@ -13,11 +13,11 @@ public static class SendTextMessage
 {
     [FunctionName("SendTextMessage")]
     public static async Task<IActionResult> RunAsync(
-        [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]
+        [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
         HttpRequest req, ILogger log,
         [CosmosDB(
-            "TextMessage",
-            "SentMessage",
+            "Telnyx",
+            "Message",
             ConnectionStringSetting = "CosmosDBConnectionString")]
         IAsyncCollector<string> sentMessageOut)
     {
@@ -36,7 +36,7 @@ public static class SendTextMessage
             var message = await service.CreateAsync(options);
             // Write to Cosmos DB
             await sentMessageOut.AddAsync(message.TelnyxResponse.ObjectJson);
-            return new OkObjectResult(message.TelnyxResponse.ObjectJson);
+            return new OkObjectResult(message.TelnyxResponse.ResponseJson);
         }
         catch (TelnyxException ex)
         {

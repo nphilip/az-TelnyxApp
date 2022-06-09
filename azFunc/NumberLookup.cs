@@ -15,7 +15,7 @@ public static class NumberLookup
     public static async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]
         HttpRequest req, ILogger log, [CosmosDB(
-            "NumberLookup",
+            "Telnyx",
             "LookupRecord",
             ConnectionStringSetting = "CosmosDBConnectionString")]
         IAsyncCollector<string> lookupRecordOut)
